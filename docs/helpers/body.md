@@ -8,7 +8,7 @@ With default `:json` format, the body should be a hash:
 
 ```ruby
 class CatsAPI < Evil::Client
-  format { :json }
+  format "json"
   # ...
   scope :cats do
     # ...
@@ -34,7 +34,7 @@ The same content, but formatted as `:yaml` will send another body and header:
 
 ```ruby
 class CatsAPI < Evil::Client
-  format { :yaml }
+  format "yaml"
 end
 
 CatsAPI.cats.create species: "Acinonyx jubatus", name: "Cheetah"
@@ -46,7 +46,7 @@ The `:form` format will make body url encoded:
 
 ```ruby
 class CatsAPI < Evil::Client
-  format { :form }
+  format "form"
 end
 
 CatsAPI.cats.create species: "Acinonyx jubatus", name: "Cheetah"
@@ -58,7 +58,7 @@ The `:text` just stringifies it as is:
 
 ```ruby
 class CatsAPI < Evil::Client
-  format { :text }
+  format "text"
 end
 
 CatsAPI.cats.create species: "Acinonyx jubatus", name: "Cheetah"
@@ -81,7 +81,7 @@ class CatsAPI < Evil::Client
     operation :upload do
       option :files, method(:Array)
 
-      format { :multipart }
+      format "multipart"
       body   { files }
     end
   end
