@@ -1,5 +1,5 @@
 module Evil
-  module Client
+  class Client
     #
     # Collection of RSpec-related definitions
     #
