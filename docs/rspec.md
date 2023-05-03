@@ -121,6 +121,4 @@ or raise an exception:
 stub_client_operation(CatsClient, "cats.fetch").to_raise StandardError, "Wrong id"
 ```
 
-## Some Hint
-
 [webmock]: https://github.com/bblimke/webmock
