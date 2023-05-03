@@ -13,6 +13,7 @@ class Evil::Client
     def __call__
       super do
         parts = __blocks__.map { |block| instance_exec(&block)&.to_s }
+        puts parts 
         path  = File.join(parts)
         __uri__(path).tap { |uri| __check__(uri) }
       end
