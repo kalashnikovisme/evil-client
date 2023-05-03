@@ -13,7 +13,7 @@ These definitions are inherited by all subscopes/operations. You can reload them
 Using a block, you can handle the response in a way you need. For example, the following code will extract and parse json body only.
 
 ```ruby
-response 200 do |(_status, _headers, *body)|
+response 200 do |_status, _headers, *body|
   JSON.parse(body.first) if body.any?
 end
 ```
@@ -23,7 +23,7 @@ end
 Do you best to either wrap a response to your domain model, or raise a specific exception:
 
 ```ruby
-response 200 do |(_status, _headers, *body)|
+response 200 do |_status, _headers, *body|
   Cat.new(JSON.parse(body.first)) if body.any?
 end
 

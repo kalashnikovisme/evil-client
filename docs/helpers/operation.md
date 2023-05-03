@@ -47,7 +47,7 @@ class CatsClient < Evil::Client
       path { id }
       http_method :get
       response 200
-      response(400, 422) { |(status, *)| raise "#{status}: Wrong request" }
+      response(400, 422) { |status, *| raise "#{status}: Wrong request" }
       response(404) { raise "404: Not found" }
     end
   end
@@ -63,7 +63,7 @@ class CatsClient < Evil::Client
     path { "cats" } # relative to root scope
     http_method :get
     response 200
-    response(400, 422) { |(status, *)| raise "#{status}: Wrong request" }
+    response(400, 422) { |status, *| raise "#{status}: Wrong request" }
     response(404) { raise "404: Not found" }
 
     operation :fetch do

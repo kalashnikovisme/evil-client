@@ -73,14 +73,14 @@ class CatsClient < Evil::Client
 
       # Parses json response and wraps it into Cat instance with additional
       # parameter
-      response 200 do |(status, headers, body)|
+      response 200 do |status, headers, body|
         # Suppose you define a model for cats
         Cat.new JSON.parse(body)
       end
 
       # Parses json response, wraps it into model with [#error] and raises
       # an exception where [ResponseError#response] contains the model istance
-      response(400, 422) { |(status, *)| raise "#{status}: Record invalid" }
+      response(400, 422) { |status, *| raise "#{status}: Record invalid" }
     end
   end
 end
