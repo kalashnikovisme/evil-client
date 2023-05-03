@@ -61,5 +61,5 @@ When you use client-specific [middleware], the `response` block will receive the
 
 If a remote API will respond with a status, not defined for the operation, the `Evil::Client::ResponseError` will be risen. The exception carries both the response, and all its parts (status, headers, and body).
 
-[rack response]: http://www.rubydoc.info/github/rack/rack/master/file/SPEC#The_Response
+[rack response]: https://www.rubydoc.info/github/rack/rack/Rack/Response
 [middleware]:
