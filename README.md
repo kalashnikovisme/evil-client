@@ -86,7 +86,7 @@ class CatsClient < Evil::Client
 end
 
 # Instantiate a client with a concrete settings
-cat_client = CatClient.new domain:   "awesome-cats",
+cat_client = CatsClient.new domain:   "awesome-cats",
                            user:     "cat_lover",
                            password: "purr"
 
